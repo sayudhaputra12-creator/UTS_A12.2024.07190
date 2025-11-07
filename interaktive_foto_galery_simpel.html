@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Toko Komputer Sejahtera</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      color: #125d8a;
+    }
+
+    /* Gambar utama */
+    #gambarUtama {
+      width: 350px;
+      height: 250px;
+      border-radius: 10px;
+      border: 2px solid #125d8a;
+      margin: 10px;
+    }
+
+    /* Barisan gambar kecil */
+    .thumbnails img {
+      width: 80px;
+      height: 60px;
+      margin: 5px;
+      cursor: pointer;
+      opacity: 0.6;
+      border-radius: 5px;
+    }
+
+    /* Saat gambar diklik atau diarahkan mouse */
+    .thumbnails img:hover, 
+    .thumbnails img.aktif {
+      opacity: 1;
+      border: 2px solid #125d8a;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galeri Produk Toko Komputer Sejahtera</h1>
+
+  <!-- Gambar utama -->
+  <img id="gambarUtama" src="/asset/mouse1.jpeg" alt="Gambar Utama">
+
+  <!-- Gambar kecil -->
+  <div class="thumbnails">
+    <img src="/asset/mouse1.jpeg" alt="Mouse" onclick="gantiGambar(this)" class="aktif">
+    <img src="/asset/monitor2.jpg" alt="Monitor" onclick="gantiGambar(this)">
+    <img src="/asset/keyboard1.jpeg" alt="Keyboard" onclick="gantiGambar(this)">
+    <img src="/asset/casing.jpg" alt="Casing" onclick="gantiGambar(this)">
+    <img src="/asset/memori.jpg" alt="Memori" onclick="gantiGambar(this)">
+  </div>
+
+  <script>
+    // Fungsi untuk mengganti gambar utama
+    function gantiGambar(gambarKecil) {
+      // Ubah gambar utama sesuai gambar kecil yang diklik
+      document.getElementById("gambarUtama").src = gambarKecil.src;
+
+      // Hilangkan status aktif dari semua gambar kecil
+      let semuaGambar = document.querySelectorAll(".thumbnails img");
+      for (let i = 0; i < semuaGambar.length; i++) {
+        semuaGambar[i].classList.remove("aktif");
+      }
+
+      // Tambahkan status aktif pada gambar yang diklik
+      gambarKecil.classList.add("aktif");
+    }
+  </script>
+
+</body>
+</html>

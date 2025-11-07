@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clets komp catalog</title>
+  <script type="text/JavaScript" src="js/atur1.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .promo-header {
+      background-color: #818283;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    /* ✅ Container utama promo */
+    .promo-container {
+      display: flex;             /* membuat card sejajar ke samping */
+      justify-content: center;   /* rata tengah */
+      flex-wrap: wrap;           /* biar tetap rapi di layar kecil */
+      gap: 20px;                 /* jarak antar card */
+      padding: 40px 0;
+    }
+
+    .promo-card {
+      width: 250px;              /* ukuran lebar tiap card */
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .promo-card button {
+      background-color: #818283;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-bottom: 15px;
+    }
+
+    .promo-card button:hover {
+      background-color: #6b6c6d;
+    }
+
+    footer {
+      background-color: #818283;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="promo-header">
+    <h1>Promo Spesial 11.11</h1>
+    <p>Dapatkan promo paketan rakit komputer di event spesial 11.11</p>
+  </header>
+
+  <!-- ✅ Semua card promo sekarang sejajar horizontal -->
+  <div class="promo-container">
+    <div class="card promo-card">
+      <img src="/asset/promo1.jpg" class="card-img-top" alt="Monitor">
+      <div class="card-body">
+        <h5 class="card-title">Paket Rakit PCONE</h5>
+        <p class="card-text">Dapatkan Paket rakit PC dengan spec for creator.</p>
+        <button>Detail</button>
+      </div>
+    </div>
+
+    <div class="card promo-card">
+      <img src="/asset/promo2.jpg" class="card-img-top" alt="Monitor">
+      <div class="card-body">
+        <h5 class="card-title">Paket Rakit PCTWO</h5>
+        <p class="card-text">Dapatkan Paket rakit PC dengan spec for student.</p>
+        <button>Detail</button>
+      </div>
+    </div>
+
+    <div class="card promo-card">
+      <img src="/asset/promo3.jpg" class="card-img-top" alt="Monitor">
+      <div class="card-body">
+        <h5 class="card-title">Paket Rakit PCTHREE</h5>
+        <p class="card-text">Dapatkan Paket rakit PC dengan spec for gaming.</p>
+        <button>Detail</button>
+      </div>
+    </div>
+
+    <div class="card promo-card">
+      <img src="/asset/promo4.jpg" class="card-img-top" alt="Monitor">
+      <div class="card-body">
+        <h5 class="card-title">Paket Rakit PCFOUR</h5>
+        <p class="card-text">Dapatkan Paket rakit PC dengan spec for office.</p>
+        <button>Detail</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Clet's Komp. Semua Hak Dilindungi. Cleta Sayudha Riqueza Putra. A12.2024.07190
+    <span id="clock">09.00-21.00</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

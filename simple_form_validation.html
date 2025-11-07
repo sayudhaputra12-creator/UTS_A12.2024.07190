@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Kontak - Clet's Komp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #818283;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #818283;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #4f5052;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+
+    .success {
+      color: lightgray;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Hubungi Kami</h2>
+  <form id="contactForm" onsubmit="return validateForm()">
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+    <span id="namaError" class="error"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+    <span id="emailError" class="error"></span>
+
+    <label for="pesan">Pesan:</label>
+    <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan Anda di sini..."></textarea>
+
+    <button type="submit">Kirim Pesan</button>
+
+    <p id="successMsg" class="success"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      // Ambil elemen input
+      let nama = document.getElementById("nama").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let namaError = document.getElementById("namaError");
+      let emailError = document.getElementById("emailError");
+      let successMsg = document.getElementById("successMsg");
+
+      // Reset pesan error dan sukses
+      namaError.textContent = "";
+      emailError.textContent = "";
+      successMsg.textContent = "";
+
+      let valid = true;
+
+      // Validasi Nama
+      if (nama === "") {
+        namaError.textContent = "Nama wajib diisi!";
+        valid = false;
+      }
+
+      // Validasi Email
+      if (email === "") {
+        emailError.textContent = "Email wajib diisi!";
+        valid = false;
+      } else if (!email.includes("@") || !email.includes(".")) {
+        emailError.textContent = "Format email tidak valid!";
+        valid = false;
+      }
+
+      // Jika semua valid
+      if (valid) {
+        successMsg.textContent = "Terima kasih! Pesan Anda berhasil dikirim.";
+        document.getElementById("contactForm").reset();
+      }
+
+      return false; // mencegah form dikirim (karena ini contoh)
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Sederhana - Clet's Komp</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #818283;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
+    }
+
+    /* Kotak FAQ */
+    .faq {
+      background-color: #4f5052;
+      border-radius: 5px;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .pertanyaan {
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #4f5052;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .jawaban {
+      display: none; /* disembunyikan dulu */
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #eef6fb;
+      border-left: 3px solid #237dad;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>FAQ - Clet's Komp</h2>
+
+  <!-- FAQ 1 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(1)">
+      1. Apakah semua produk bergaransi?
+    </div>
+    <div class="jawaban" id="jawaban1">
+      Ya, semua produk memiliki garansi resmi antara 1 hingga 3 tahun, tergantung jenis produknya.
+    </div>
+  </div>
+
+  <!-- FAQ 2 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(2)">
+      2. Apakah Clet's Komp menerima pembelian online?
+    </div>
+    <div class="jawaban" id="jawaban2">
+      Ya, kami menerima pembelian secara online melalui website resmi dan marketplace terpercaya.
+    </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(3)">
+      3. Apakah tersedia layanan servis barang elektronik?
+    </div>
+    <div class="jawaban" id="jawaban3">
+      Tentu! Kami melayani servis laptop, komputer, dan barang elektronik lainnya.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(4)">
+      4. Apakah barang yang ada di Clet's Komp BNIB semua?
+    </div>
+    <div class="jawaban" id="jawaban4">
+      Kami menyediakan beberapa pilihan ada barang BNIB, BNOB, dan second.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="pertanyaan" onclick="tampilJawaban(5)">
+      5. Apakah pelanggan bisa melihat review barang secara langsung tanpa harus datang ke toko?
+    </div>
+    <div class="jawaban" id="jawaban5">
+      Tentu, caranya masuk ke akun Tiktok kami yaitu @cletskomp. Disana kami akan mereview barang barang kami secara jujur.
+    </div>
+  </div>
+
+  <script>
+    // Fungsi sederhana untuk menampilkan jawaban
+    function tampilJawaban(no) {
+      var jawaban = document.getElementById("jawaban" + no);
+      if (jawaban.style.display === "none") {
+        jawaban.style.display = "block";
+      } else {
+        jawaban.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
